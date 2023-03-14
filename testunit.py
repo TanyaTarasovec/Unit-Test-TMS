@@ -14,13 +14,18 @@ class TestTriangle(unittest.TestCase):
 
     def test_triangle_ne(self):
         second = Triangle(6, 8, 4)
-        self.assertNotEquals(self.first, second)
+        self.assertNotEqual(self.first, second)
 
     def test_triangle_perimetr(self):
         self.assertEqual(self.first.perimetr(), 24)
 
+    @unittest.expectedFailure
+    def test_triangle_exist(self):
+        assert Triangle._check_if_exist(self, 9, 8, 6)
+
     def test_triangle_exist(self):
         assert Triangle._check_if_exist(self, 7, 8, 9)
+
 
     def test_triangle_lt(self):
         second = Triangle(10, 17, 20)
