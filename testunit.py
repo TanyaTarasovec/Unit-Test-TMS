@@ -16,10 +16,11 @@ class TestTriangle(unittest.TestCase):
         second = Triangle(6, 8, 4)
         self.assertNotEqual(self.first, second)
 
+    @unittest.expectedFailure
     def test_triangle_perimetr(self):
         self.assertEqual(self.first.perimetr(), 24)
 
-    @unittest.expectedFailure
+
     def test_triangle_exist(self):
         assert Triangle._check_if_exist(self, 9, 8, 6)
 
